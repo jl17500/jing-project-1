@@ -231,6 +231,7 @@ I mean, in a way, it kind of forced a concrete decision about chunk size and ove
 
 **One way your implementation diverged from the spec, and why:**
 The spec called for using LangChain `CharacterTextSplitter` for chunking. I ended up writing a custom character based chunking function instead because the customer function was simplier to debug and modify for this mid size chunk project. The function also tries to break at natural boundaries (newlines, sentence openings) before going back to word boundaries, which LangChain's fixed splitter doesn't do. 
+
 ---
 
 ## AI Usage
